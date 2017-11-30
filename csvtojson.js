@@ -9,7 +9,7 @@ const convertCsvToJson = (file = './customer-data.csv') => {
             jsonData.push(data);
         })
         .on('end', (error) => {
-            fs.writeFileSync('./customer-data.json', JSON.stringify(jsonData));
+            fs.writeFileSync('./customer-data.json', JSON.stringify(jsonData, null, 2));
             console.log('CSV file converted to JSON');
         });
 }
